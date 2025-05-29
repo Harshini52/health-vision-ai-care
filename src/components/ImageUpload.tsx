@@ -82,6 +82,13 @@ export const ImageUpload = ({ onAnalysis }: ImageUploadProps) => {
     });
   };
 
+  const handleChooseFile = () => {
+    const input = document.querySelector('input[type="file"]') as HTMLInputElement;
+    if (input) {
+      input.click();
+    }
+  };
+
   return (
     <Card className="h-full bg-white/80 backdrop-blur-sm border-2 border-dashed border-blue-200 hover:border-blue-400 transition-colors duration-300">
       <CardHeader className="text-center">
@@ -144,7 +151,7 @@ export const ImageUpload = ({ onAnalysis }: ImageUploadProps) => {
         <div className="mt-6 flex flex-col sm:flex-row gap-3">
           <Button 
             className="flex-1 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white"
-            onClick={() => document.querySelector('input[type="file"]')?.click()}
+            onClick={handleChooseFile}
             disabled={analyzing}
           >
             <Camera className="mr-2 h-4 w-4" />
