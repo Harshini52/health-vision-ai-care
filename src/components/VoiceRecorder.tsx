@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -7,10 +6,10 @@ import { Mic, MicOff, Play, Square, Loader2, MessageCircle } from "lucide-react"
 import { useToast } from "@/hooks/use-toast";
 
 interface VoiceRecorderProps {
-  onTranscription: (results: any) => void;
+  onAnalysis: (results: any) => void;
 }
 
-export const VoiceRecorder = ({ onTranscription }: VoiceRecorderProps) => {
+export const VoiceRecorder = ({ onAnalysis }: VoiceRecorderProps) => {
   const [isRecording, setIsRecording] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
   const [transcription, setTranscription] = useState("");
@@ -80,7 +79,7 @@ export const VoiceRecorder = ({ onTranscription }: VoiceRecorderProps) => {
       transcription: text
     };
     
-    onTranscription(mockResults);
+    onAnalysis(mockResults);
     
     toast({
       title: "Analysis Complete",
