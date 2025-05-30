@@ -67,7 +67,7 @@ const AIAnalysis = () => {
                         Upload X-rays, MRIs, CT scans, or other medical images for AI analysis
                       </p>
                     </div>
-                    <ImageUpload />
+                    <ImageUpload onAnalysis={handleImageAnalysis} />
                   </TabsContent>
                   
                   <TabsContent value="voice" className="space-y-4">
@@ -78,7 +78,7 @@ const AIAnalysis = () => {
                         Describe your symptoms verbally for AI-powered health insights
                       </p>
                     </div>
-                    <VoiceRecorder />
+                    <VoiceRecorder onAnalysis={handleVoiceAnalysis} />
                   </TabsContent>
                 </Tabs>
               </CardContent>
